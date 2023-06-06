@@ -12,7 +12,9 @@ namespace Geometry
         {
             if ( _edgeA < 0 || _edgeB < 0 || _edgeC < 0) { throw new ArgumentException("The length of each side must be greater then zero"); }
 
-
+            var maxEdge = Math.Max(_edgeA, Math.Max(_edgeB, _edgeC));
+            if ((_edgeA + _edgeB + _edgeC) - 2 * maxEdge < Constants.Accuracy)
+                throw new ArgumentException("The larger side must be less then sum of the two other sides");
 
             EdgeA = _edgeA;
             EdgeB = _edgeB;

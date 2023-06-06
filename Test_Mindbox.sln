@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringLibrary", "StringLibr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Демонстрация", "Демонстрация\Демонстрация.csproj", "{4FC247AD-24D7-4D7A-BC92-6604B52F4720}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geometry", "Geometry\Geometry.csproj", "{48DC6A2D-0F68-41BC-99DC-9FA1083767BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4FC247AD-24D7-4D7A-BC92-6604B52F4720}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FC247AD-24D7-4D7A-BC92-6604B52F4720}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FC247AD-24D7-4D7A-BC92-6604B52F4720}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48DC6A2D-0F68-41BC-99DC-9FA1083767BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48DC6A2D-0F68-41BC-99DC-9FA1083767BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48DC6A2D-0F68-41BC-99DC-9FA1083767BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48DC6A2D-0F68-41BC-99DC-9FA1083767BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

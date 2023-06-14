@@ -24,12 +24,12 @@ namespace GeometryTest
             Assert.Less(Math.Abs(triangle.EdgeC - c), Constants.Accuracy);
         }
 
-        [TestCase(-5, 5, 5)]
-        [TestCase(5, -5, 5)]
-        [TestCase(5, 5, -5)]
-        [TestCase(0, 5, 5)]
-        [TestCase(5, 0, 5)]
-        [TestCase(5, 5, 0)]
+        [TestCase(-5, 4, 3)]
+        [TestCase(5, -4, 3)]
+        [TestCase(5, 4, -3)]
+        [TestCase(0, 4, 3)]
+        [TestCase(5, 0, 3)]
+        [TestCase(5, 4, 0)]
         public void InitTriangleWithInvalidSidesTest(double a, double b, double c)
         {
             Assert.Catch<ArgumentException>(() => new Triangle(a, b, c));

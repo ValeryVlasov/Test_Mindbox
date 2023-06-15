@@ -1,27 +1,33 @@
 ﻿using Microsoft.VisualBasic;
+using System.Reflection.Metadata.Ecma335;
 
 namespace Geometry
 {
-    public class Triangle
+    public class Triangle : ITriangle
     {
         public double EdgeA { get; }
         public double EdgeB { get; }
         public double EdgeC { get; }
 
-        public Triangle(double _edgeA, double _edgeB, double _edgeC)
-        {
-            if ( _edgeA <= 0 || _edgeB <= 0 || _edgeC <= 0) { throw new ArgumentException("The length of each side must be greater then zero"); }
+        private readonly bool _isRightTriangle;
+        public bool IsRightTriangle => _isRightTriangle;
 
-            var maxEdge = Math.Max(_edgeA, Math.Max(_edgeB, _edgeC));
-            if ((_edgeA + _edgeB + _edgeC) - 2 * maxEdge < Constants.Accuracy)
+        public Triangle(double edgeA, double edgeB, double edgeC)
+        {
+            if ( edgeA <= 0 || edgeB <= 0 || edgeC <= 0) { throw new ArgumentException("The length of each side must be greater then zero"); }
+
+            var maxEdge = Math.Max(edgeA, Math.Max(edgeB, edgeC));
+            if ((edgeA + edgeB + edgeC) - 2 * maxEdge < Constants.Accuracy)
                 throw new ArgumentException("The larger side must be less then sum of the two other sides");
 
-            EdgeA = _edgeA;
-            EdgeB = _edgeB;
-            EdgeC = _edgeC;
+            EdgeA = edgeA;
+            EdgeB = edgeB;
+            EdgeC = edgeC;
+
+            _isRightTriangle = GetIsRightTriangle();
         }
 
-        public bool IsRightTriangle()
+        private bool GetIsRightTriangle()
         {
             double maxEdge = EdgeA, b = EdgeB, c = EdgeC;
 

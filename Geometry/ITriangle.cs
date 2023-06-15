@@ -2,9 +2,9 @@
 {
     public interface ITriangle : IFigure
     {
-        double _edgeA { get; }
-        double _edgeB { get; }
-        double _edgeC { get; }
+        double EdgeA { get; }
+        double EdgeB { get; }
+        double EdgeC { get; }
 
         bool IsRightTriangle { get; }
     }

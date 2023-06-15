@@ -60,9 +60,14 @@ namespace GeometryTest
         [TestCase(3, 4, 5 + 2e-7, ExpectedResult = false)]
         public bool NotRightTriangle(double a, double b, double c)
         {
+            // Data
             var triangle = new Triangle(a, b, c);
 
-            return triangle.IsRightTriangle();
+            // Act
+            var isRight = triangle.IsRightTriangle;
+
+            // Assert
+            return isRight;
         }
     }
 }

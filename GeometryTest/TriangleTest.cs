@@ -1,6 +1,7 @@
 ﻿using System;
 using Geometry;
 using NUnit.Framework;
+using static NUnit.Framework.Constraints.Tolerance;
 
 namespace GeometryTest
 {
@@ -14,10 +15,13 @@ namespace GeometryTest
         [Test]
         public void InitTriangleTest()
         {
+            // Arrange
             double a = 3, b = 4, c = 5;
 
+            // Act
             var triangle = new Triangle(a, b, c);
 
+            // Assert
             Assert.NotNull(triangle);
             Assert.Less(Math.Abs(triangle.EdgeA - a), Constants.Accuracy);
             Assert.Less(Math.Abs(triangle.EdgeB - b), Constants.Accuracy);
@@ -38,12 +42,15 @@ namespace GeometryTest
         [Test]
         public void GetSquareTest()
         {
+            // Arrange
             double a = 3, b = 4, c = 5;
             double result = 6;
             var triangle = new Triangle(a, b, c);
 
+            // Act
             var square = triangle?.GetSquare();
 
+            // Assert
             Assert.NotNull(square);
             Assert.Less(Math.Abs(square.Value - result), Constants.Accuracy);
         }
@@ -60,7 +67,7 @@ namespace GeometryTest
         [TestCase(3, 4, 5 + 2e-7, ExpectedResult = false)]
         public bool NotRightTriangle(double a, double b, double c)
         {
-            // Data
+            // Arrange
             var triangle = new Triangle(a, b, c);
 
             // Act

@@ -29,12 +29,15 @@ namespace GeometryTest
         [Test]
         public void GetSquareTest()
         {
+            // Arrange
             var radius = 10;
             var circle = new Circle(radius);
             var expected = Math.PI * Math.Pow(radius, 2);   
 
+            // Act
             var result = circle.GetSquare();
 
+            // Assert
             Assert.Less(Math.Abs(result - expected), eps);
         }
     }
